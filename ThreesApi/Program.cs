@@ -1,8 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// This looks for any classes with the [ApiController] attribute and makes 'em exist. So we don't have to instantiate them ourselves
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -16,10 +16,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection(); // Dunno what this does
 
-app.UseAuthorization();
+app.UseAuthorization(); // Dunno what this does
 
-app.MapControllers();
+app.MapControllers(); // Automatically maps routes to our [ApiController]s so we don't gotta do jack to get on the net
 
-app.Run();
+app.Run(); // Snarts the server
