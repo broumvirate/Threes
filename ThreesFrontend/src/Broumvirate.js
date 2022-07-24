@@ -5,13 +5,12 @@ function Broumvirate() {
 
     useEffect(() => {
         fetch("https://localhost:7203/api/Broumvirate").then((res) => res.json()).then(res => {
-            console.log("fetched em")
             setMembers(res);
         })
     }, [])
 
     const memberEntries = members.map((el, i) => {
-        return <div key={i}>
+        return <div key={i} className="inline-block bg-green-300 rounded-md m-3 p-2">
             <h1>{el.name}</h1>
             {el.isFunny ? <h3>This guy's funny</h3> : null}
         </div>
