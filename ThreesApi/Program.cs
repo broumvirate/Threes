@@ -1,12 +1,16 @@
+using ThreesApi;
+
 var myCors = "_threesCors";
 var builder = WebApplication.CreateBuilder(args);
+
+Config.LoadConfigurationFiles();
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: myCors,
         policy =>
         {
-            policy.WithOrigins("https://localhost:3000");
+            policy.WithOrigins("https://localhost:3000"); // Debug react server
         });
 
 });
@@ -26,6 +30,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var connectionString = Config.SecretsConfig["devConnectionString"];
 
 app.UseHttpsRedirection(); // Dunno what this does
 
