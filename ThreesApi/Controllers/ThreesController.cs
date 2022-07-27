@@ -18,7 +18,36 @@ public class ThreesController : ControllerBase
     [HttpGet("{threeId}")]
     public ActionResult<ThreeDTO> GetThree(int threeId)
     {
-        return null;
+        return new ThreeDTO()
+        {
+            Id = 1,
+            Dad = new GuyDTO()
+            {
+                Id = 1,
+            },
+            Observatory = new ObservatoryDTO()
+            {
+                Id = 1,
+                Name = "buttbutt"
+            },
+            Ones = new[]
+            {
+                new OneDTO()
+                {
+                    Id = 1,
+                    Whence = 1,
+                    Texas = "Make me a chicken sandwich",
+                    When = DateTime.Now
+                },
+                new OneDTO()
+                {
+                    Id = 2,
+                    Whence = 2,
+                    Texas = "with salt and pepper.",
+                    When = DateTime.Now.AddMinutes(1)
+                }
+            }
+        };
     }
 
     [HttpPost]
