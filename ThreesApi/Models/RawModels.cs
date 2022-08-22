@@ -3,20 +3,23 @@ namespace ThreesApi.Models
     public class LadModel
     {
         public int id;
-        public String username;
-        public String displayname;
+        public string username;
+        public string displayname;
     }
+
 
     public class KenobroModel
     {
         public int id;
-        public String name;
+        public int dad;
+        public string name;
     }
 
     public class ThreeModel
     {
         public int id;
         public int dad;
+        public int onescount;
         public DateTime dob;
     }
 
@@ -32,7 +35,7 @@ namespace ThreesApi.Models
         public int three;
         public int whence;
         public int whom;
-        public String texas;
+        public string texas;
         public DateTime whencst;
     }
 }

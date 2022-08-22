@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function Broumvirate() {
+export default function Broumvirate() {
     const [members, setMembers] = useState([]);
 
     useEffect(() => {
@@ -9,7 +9,7 @@ function Broumvirate() {
         })
     }, [])
 
-    const memberEntries = members.map((el, i) => {
+    const memberEntries = members.length === 0 ? <NoBroumvirate/> : members.map((el, i) => {
         return <div key={i} className="inline-block bg-green-300 rounded-md m-3 p-2">
             <h1>{el.name}</h1>
             {el.isFunny ? <h3>This guy's funny</h3> : null}
@@ -18,4 +18,9 @@ function Broumvirate() {
     return <div> {memberEntries} </div>
 }
 
-export default Broumvirate
+function NoBroumvirate()
+{
+    return <div className="inline-block bg-red-300 rounded-md m-3 p-2">
+        <h1 className="text-xl font-bold p-2">No Broumvirate Members.</h1>
+    </div>
+}
