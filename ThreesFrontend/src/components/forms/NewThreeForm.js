@@ -8,7 +8,7 @@ export default function NewThreeForm({onSubmit, initialValues}) {
         initialValues={initialValues}
         validate={values => {
             const errors = {};
-            if(!validateThreePagesCount(values.pageCount).isValid) errors.pageCount = "Invalid value! Must be number between 2 and 24."
+            if(!validateThreePagesCount(values.pages).isValid) errors.pages = "Invalid value! Must be number between 2 and 24."
             return errors;
         }}>
         {props => (
@@ -36,7 +36,7 @@ export default function NewThreeForm({onSubmit, initialValues}) {
                                 </div>
                             )}
                     </Field>
-                    <Field name="pageCount">
+                    <Field name="pages">
                             {({input, meta}) => (
                                 <div className="flex flex-col flex-none">
                                     <div>

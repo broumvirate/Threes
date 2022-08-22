@@ -16,11 +16,12 @@ export default function NewThree() {
 
         const data = {pages: validateThreePagesCount(pageCount).value};
         if(observatoryName != null) data.observatoryName = observatoryName;
+        console.log(data);
         setInitialData(data);
     }, [])
 
     const onSubmit = async(data) => {
-        localStorage.setItem('newThreePages', data.pageCount);
+        localStorage.setItem('newThreePages', data.pages);
         localStorage.setItem('newThreeObservatory', data.observatoryName);
         navigate("/");
     }

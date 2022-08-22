@@ -8,7 +8,7 @@ function validateThreePagesCount(pages)
         if(value > 1)
         {
             if(value > MAX_PAGES) result.value = MAX_PAGES;
-            else return {isValid: true, value};
+            else return {isValid: true, value: value};
         }
     }
     return result;
