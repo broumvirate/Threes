@@ -20,10 +20,17 @@ export default function NewThree() {
         setInitialData(data);
     }, [])
 
+
     const onSubmit = async(data) => {
+        // On form submission, save page count and obserervatory to localStorage to autofill next new three
         localStorage.setItem('newThreePages', data.pages);
         localStorage.setItem('newThreeObservatory', data.observatoryName);
-        navigate("/");
+
+        // Do back end form submission here!!!
+        // post request whatever
+        //
+
+        navigate("/"); // Navigate back to root page using react-router navigate hook
     }
 
     return <div className="flex justify-center container mx-auto px-4">

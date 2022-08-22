@@ -3,14 +3,17 @@ import { validateThreePagesCount } from "../../lib/validations";
 import { ChessInput, ChessButton } from "./FormElements";
 
 export default function NewThreeForm({onSubmit, initialValues}) {
+
+    const validation = values => {
+        const errors = {};
+        if(!validateThreePagesCount(values.pages).isValid) errors.pages = "Invalid value! Must be number between 2 and 24."
+        return errors;
+    };
+
     return <Form
         onSubmit={onSubmit}
         initialValues={initialValues}
-        validate={values => {
-            const errors = {};
-            if(!validateThreePagesCount(values.pages).isValid) errors.pages = "Invalid value! Must be number between 2 and 24."
-            return errors;
-        }}>
+        validate={validation}>
         {props => (
             <form onSubmit={props.handleSubmit}>
                 <div className="flex flex-row mb-4">

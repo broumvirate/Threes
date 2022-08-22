@@ -9,13 +9,13 @@ export default function Broumvirate() {
         })
     }, [])
 
-    const memberEntries = members.length === 0 ? <NoBroumvirate/> : members.map((el, i) => {
+    const memberEntries = members.map((el, i) => {
         return <div key={i} className="bg-green-300 rounded-md m-3 p-2">
             <h1>{el.name}</h1>
             {el.isFunny ? <h3>This guy's funny</h3> : null}
         </div>
     })
-    return <div className="container mx-auto px-4"> {memberEntries} </div>
+    return <div className="container mx-auto px-4"> { members.length === 0 ? <NoBroumvirate/> : memberEntries } </div>
 }
 
 function NoBroumvirate()
