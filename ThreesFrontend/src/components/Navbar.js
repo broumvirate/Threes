@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export default function Navbar(){
-    return <header className="h-20 px-8 bg-green-100">
+    return <div>
+        <header className="h-20 px-8 bg-green-100">
                 <div className="md:w-2/3 w-full mx-auto pt-5 flex flex-row justify-between">
                     <div>
                         <Link to="/">
@@ -21,5 +22,7 @@ export default function Navbar(){
                         </div>
                     </div>
                 </div>
-    </header>
+        </header>
+        <Outlet />
+    </div>
 }

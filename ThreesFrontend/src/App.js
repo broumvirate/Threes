@@ -6,9 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 export default function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<Navbar />}>
           <Route index element={<Broumvirate />} />
           <Route path="new" element={<NewThree />} />
         </Route>
